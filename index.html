@@ -3,12 +3,35 @@
 <head>
   <title>TODO APP</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+  <div class="container-fluid text-center">
+    <div class="row text-center">
+      <h1>Getter Done List</h1>
+      <div class="col-lg-12">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Thing to do ..." id="need-to-do">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button" id="add-task-main">Add</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="todo-list-main-div">
+        <h3 class="text-center">Things to Do</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div id="todo-list-done">
+        <h3 class="text-center">Completed Tasks</h3>
+      </div>
+    </div>
+  </div>
 
   <script src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="/javascripts/main.js"></script>
+  <script src="/javascripts/app.js"></script>
 </body>
 </html>

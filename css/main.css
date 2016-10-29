@@ -1,0 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background: tomato; }
+
+.container-fluid {
+  width: 60%; }
+
+h1, h3 {
+  color: white; }
