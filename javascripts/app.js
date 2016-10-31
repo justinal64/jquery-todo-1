@@ -15,9 +15,10 @@ let $completedTasks = $("#todo-list-done");
 $addToDoListMain.on("click", function() {
   console.log("test this click");
 //// add input text to todo list array
-  toDoListMain.push($needToDo.val());
+  arrayManipulation($needToDo.val(), "add");
+  // arrayManipulation($needToDo.val(), "remove");
+  // toDoListMain.push($needToDo.val());
   console.log("toDoListMain", toDoListMain);
-//// display that line item in the dom with an edit, delete, complete button
   toDoListMaker();
 });
 
@@ -103,3 +104,16 @@ $(document).on("click", ".restoreTodo", function() {
   divRestore.children(".completeTodo").removeClass("hidden");
   divRestore.children(".restoreTodo").addClass("hidden");
 });
+
+function arrayManipulation(value, type) {
+  // This gets the position the the element is in on the array
+  var index = toDoListMain.indexOf(value);
+  if(type === "remove") {
+    // Remove from array
+    // This removes the item from the array
+    toDoListMain.splice(index, 1);
+  } else if(type === "add") {
+    // Add the item to the array
+    toDoListMain.push(value);
+  }
+}
