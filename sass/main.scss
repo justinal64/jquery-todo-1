@@ -13,6 +13,18 @@ body {
   width: 60%;
 }
 
-h1, h3 {
+h1, h3, .task {
   color: white;
+}
+
+.custom-control-description {
+  color: white;
+}
+
+.deleteTodo,
+.editTodo,
+.completeTodo,
+.restoreTodo
+ {
+  font-size: .75em;
 }
