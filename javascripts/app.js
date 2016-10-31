@@ -6,6 +6,8 @@ console.log("test in js connection");
 let $needToDo = $("#need-to-do");
 let $addToDoListMain = $("#add-task-main");
 let toDoListMain = [];
+let toDoListDeleted = [];
+let toDoListCompleted = [];
 let $mainToDoListDOM = $("#todo-list-main-div");
 let $completedTasks = $("#todo-list-done");
 
@@ -25,7 +27,7 @@ function toDoListMaker() {
   $mainToDoListDOM.html(`<h3 class="text-center">Things to Do</h3>`);
   for (var i = 0; i < toDoListMain.length; i++) {
     let newTask = $(`<div id='task-no-${i}'>
-      <p id='task-${i}'>${toDoListMain[i]}</p>
+      <p id='task-${i}' class='task'>${toDoListMain[i]}</p>
       <button type='button' class='btn btn-default btn-xs editTodo' id='edit-button-${i}'>edit</button>
       <button type='button' class='btn btn-default btn-xs deleteTodo' id='delete-button-${i}'>delete</button>
       <button type='button' class='btn btn-default btn-xs completeTodo' id='complete-button-${i}'>complete</button>
@@ -58,6 +60,10 @@ $(document).on("click", ".deleteTodo", function() {
   let divDelete = $(this).parent("div");
   console.log("divDelete", divDelete);
   divDelete.remove();
+
+  ///////// remove from toDoListMain array /////////
+  ///////// add to toDoListDeleted array /////////
+
 });
 
 ////// complete button in todo list
@@ -69,6 +75,10 @@ $(document).on("click", ".completeTodo", function() {
   let divMove = $(this).parent("div");
   console.log("divMove", divMove);
   $completedTasks.append(divMove);
+
+  ///////// remove from toDoListMain array /////////
+  ///////// add to toDoListComplete array /////////
+
   divMove.children(".editTodo").addClass("hidden");
   divMove.children(".deleteTodo").addClass("hidden");
   divMove.children(".completeTodo").addClass("hidden");
@@ -84,6 +94,10 @@ $(document).on("click", ".restoreTodo", function() {
   let divRestore = $(this).parent("div");
   console.log("divRestore", divRestore);
   $mainToDoListDOM.append(divRestore);
+
+  ///////// remove from toDoListMain array /////////
+  ///////// add to toDoListComplete array //////////
+
   divRestore.children(".editTodo").removeClass("hidden");
   divRestore.children(".deleteTodo").removeClass("hidden");
   divRestore.children(".completeTodo").removeClass("hidden");
