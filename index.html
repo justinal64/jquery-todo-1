@@ -6,9 +6,17 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-  <div class="container-fluid text-center">
+<div class="container col-xs-4 col-xs-offset-4" id="login-container">
+        <h1 class="form-signin-heading">Todo App</h1>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required>
+        <button class="btn btn-lg btn-success col-xs-6" id="loginButton">Login</button>
+        <button class="btn btn-lg btn-primary col-xs-6" id="registerButton">Register</button>
+    </div>
+  <div class="container-fluid text-center hide" id="todo-container">
     <div class="row text-center">
-      <h1>Getter Done List</h1>
+
       <div class="col-lg-12">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Thing to do ..." id="need-to-do">
@@ -18,19 +26,25 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div id="todo-list-main-div" class="col-sm-8">
-        <h3 class="text-center">Things to Do</h3>
-      </div>
-      <div id="todo-list-done" class="col-sm-4">
-        <h3 class="text-center">Completed Tasks</h3>
-      </div>
-    </div>
   </div>
+<!--     <div class="row"> -->
+<!--       <div id="todo-list-main-div" class="col-sm-8"> -->
+        <h3 class="text-center">Things to Do</h3>
+   <ul id="incomplete-tasks"></ul>
+<!--       </div>
+      <div id="todo-list-done" class="col-sm-4"> -->
+        <h3 class="text-center">Completed Tasks</h3>
+        <ul id="completed-tasks"></ul>
+<!--       </div> -->
+
+<!--   </div> -->
 
   <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
   <script src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="/javascripts/firebase.js"></script>
+  <script src="/javascripts/firebaseMethods.js"></script>
+  <script src="/javascripts/firebaseAuth.js"></script>
   <script src="/javascripts/app.js"></script>
 </body>
 </html>
