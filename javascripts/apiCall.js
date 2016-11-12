@@ -1,12 +1,12 @@
 'use strict';
 
-var FbAPI = (function () {
+var movieHistor = (function () {
   return {
-    firebaseCredentials : function() {
+    OMDbCredentials : function() {
       return new Promise((resolve, reject) => {
         $.ajax({
           method: 'GET',
-          url: 'apiKeys.json'
+          url: 'http://www.omdbapi.com/?t=star+wars&y=&plot=short&r=json'
         }).then((response) => {
           resolve(response);
         }, (error) => {
